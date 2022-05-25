@@ -8,7 +8,7 @@
     import {nanoid} from 'nanoid'
     export default{
         name: 'MyHeader',
-        props:['addTodo'],
+        // props:['addTodo'],
         methods:{
             add(e){
                 const todoObj = {
@@ -16,7 +16,7 @@
                     title:e.target.value,
                     done:false
                 }   
-                this.addTodo(todoObj);
+               this.$emit('addTodo',todoObj)
                 e.target.value = '';
             }
         }
